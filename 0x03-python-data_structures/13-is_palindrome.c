@@ -8,7 +8,6 @@
 
 int is_palindrome(listint_t **head)
 {
-
 	int is_palindrome = 1;
 
 	if (*head == NULL || (*head)->next == NULL)
@@ -47,7 +46,6 @@ int is_palindrome(listint_t **head)
 		fastPtr->next = newNode;
 		newNode = fastPtr;
 		fastPtr = prev;
-	}
-	*head = newNode;
+	} *head = newNode;
 	return (is_palindrome);
 }
