@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 		return (1);
 
 	listint_t *prev = NULL;
-	listint_t *next = NULL;
+	listint_t *next;
 	listint_t *slowPtr = *head;
 	listint_t *fastPtr = *head;
 
