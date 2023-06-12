@@ -9,14 +9,13 @@
 int is_palindrome(listint_t **head)
 {
 	int is_palindrome = 1;
-
-	if (*head == NULL || (*head)->next == NULL)
-		return (is_palindrome);
-
 	listint_t *slowPtr = *head;
 	listint_t *fastPtr = *head;
 	listint_t *prev = NULL;
 	listint_t *newNode;
+
+	if (*head == NULL || (*head)->next == NULL)
+		return (is_palindrome);
 
 	while (fastPtr != NULL && fastPtr->next != NULL)
 	{
