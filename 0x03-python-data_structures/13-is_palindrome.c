@@ -10,9 +10,10 @@ int is_palindrome(listint_t **head)
 {
 
 	int is_palindrome = 1;
-  if (*head == NULL || (*head)->next == NULL)
+
+	if (*head == NULL || (*head)->next == NULL)
 		return (is_palindrome);
-  
+
 	listint_t *slowPtr = *head;
 	listint_t *fastPtr = *head;
 	listint_t *prev = NULL;
@@ -26,6 +27,7 @@ int is_palindrome(listint_t **head)
 		newNode->next = prev;
 		prev = newNode;
 	}
+
 	if (fastPtr != NULL)
 		slowPtr = slowPtr->next;
 	while (slowPtr != NULL)
