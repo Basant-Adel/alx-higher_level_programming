@@ -8,14 +8,14 @@
 
 int is_palindrome(listint_t **head)
 {
-	int is_palindrome = 1;
-	listint_t *slowPtr = *head;
-	listint_t *fastPtr = *head;
+	int check_palindrome = 1;
 	listint_t *prev = NULL;
 	listint_t *newNode;
+	listint_t *slowPtr = *head;
+	listint_t *fastPtr = *head;
 
 	if (*head == NULL || (*head)->next == NULL)
-		return (is_palindrome);
+		return (check_palindrome);
 
 	while (fastPtr != NULL && fastPtr->next != NULL)
 	{
@@ -32,7 +32,7 @@ int is_palindrome(listint_t **head)
 	{
 		if (prev->n != slowPtr->n)
 		{
-			is_palindrome = 0;
+			check_palindrome = 0;
 			break;
 		}
 		prev = prev->next;
@@ -46,5 +46,5 @@ int is_palindrome(listint_t **head)
 		newNode = fastPtr;
 		fastPtr = prev;
 	} *head = newNode;
-	return (is_palindrome);
+	return (check_palindrome);
 }
