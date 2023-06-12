@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -10,36 +8,44 @@
 
 int is_palindrome(listint_t **head)
 {
-	if (!head || !*head || !(*head)->next)
-		return (1);
 
-	listint_t *prev = NULL;
-	listint_t *next;
+	int is_palindrome = 1;
+  if (*head == NULL || (*head)->next == NULL)
+		return (is_palindrome);
+  
 	listint_t *slowPtr = *head;
 	listint_t *fastPtr = *head;
+	listint_t *prev = NULL;
+	listint_t *newNode;
 
 	while (fastPtr != NULL && fastPtr->next != NULL)
 	{
 		fastPtr = fastPtr->next->next;
-		next = slowPtr->next;
-		slowPtr->next = prev;
-		prev = slowPtr;
-		slowPtr = next;
-	}
-
-	if (fastPtr != NULL)
-	{
+		newNode = slowPtr;
 		slowPtr = slowPtr->next;
+		newNode->next = prev;
+		prev = newNode;
 	}
-
-	while (prev != NULL && slowPtr != NULL)
+	if (fastPtr != NULL)
+		slowPtr = slowPtr->next;
+	while (slowPtr != NULL)
 	{
 		if (prev->n != slowPtr->n)
-			return (0);
-
+		{
+			is_palindrome = 0;
+			break;
+		}
 		prev = prev->next;
 		slowPtr = slowPtr->next;
+	} newNode = NULL;
+	fastPtr = prev;
+	while (fastPtr != NULL)
+	{
+		prev = fastPtr->next;
+		fastPtr->next = newNode;
+		newNode = fastPtr;
+		fastPtr = prev;
 	}
-
-	return (1);
+	*head = newNode;
+	return (is_palindrome);
 }
