@@ -17,6 +17,7 @@ def magic_calculation(a, b):
         except Exception:
 
             result = b + a
+
             break
 
     return result
