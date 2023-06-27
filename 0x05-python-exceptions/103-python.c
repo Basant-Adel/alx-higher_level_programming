@@ -1,4 +1,4 @@
-#include <Python.h>
+#include <python.h>
 #include <stdio.h>
 
 /**
@@ -96,6 +96,8 @@ void print_python_float(PyObject *p)
 	}
 
 	char *str = NULL;
-	str = PyOS_double_to_string(((PyFloatObject *)p)->ob_fval,'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+
+	str = PyOS_double_to_string
+		(((PyFloatObject *)p)->ob_fval, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
 	printf("  value: %s\n", str);
 }
