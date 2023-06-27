@@ -1,49 +1,6 @@
-#include <python.h>
+#include <Python.h>
 #include <stdio.h>
-
-
-/**
- * print_python_list - A function to give data of the PyListObject
- *@p: It's the PyObject
- *Return: Void (0) successful
- */
-
-void print_python_list(PyObject *p)
-{
-	Py_ssize_t size = 0;
-	PyObject *item;
-	int b = 0;
-
-	fflush(stdout);
-	printf("[*] Python list info\n");
-
-	if (PyList_CheckExact(p))
-	{
-		size = PyList_GET_SIZE(p);
-		printf("[*] Size of the Python List = %zd\n", size);
-		printf("[*] Allocated = %lu\n", ((PyListObject *)p)->allocated);
-
-		while (b < size)
-		{
-			item = PyList_GET_ITEM(p, b);
-			printf("Element %d: %s\n", b, item->ob_type->tp_name);
-
-			if (PyBytes_Check(item))
-			{
-				print_python_bytes(item);
-			}
-			else if (PyFloat_Check(item))
-			{
-				print_python_float(item);
-			}
-			b++;
-		}
-	}
-	else
-	{
-		printf("  [ERROR] Invalid List Object\n");
-	}
-}
+#include <string.h>
 
 /**
  * print_python_bytes - A function to give data of the PyBytesObject
@@ -97,8 +54,50 @@ void print_python_float(PyObject *p)
 	}
 
 	char *str = NULL;
-
 	str = PyOS_double_to_string
-		(((PyFloatObject *)p)->ob_fval, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+		(((PyFloatObject *)p)->ob_fval,'r', 0, Py_DTSF_ADD_DOT_0, NULL);
 	printf("  value: %s\n", str);
+}
+
+/**
+ * print_python_list - A function to give data of the PyListObject
+ *@p: It's the PyObject
+ *Return: Void (0) successful
+ */
+
+void print_python_list(PyObject *p)
+{
+	Py_ssize_t size = 0;
+	PyObject *opject;
+	int b = 0;
+
+	fflush(stdout);
+	printf("[*] Python list info\n");
+
+	if (PyList_CheckExact(p))
+	{
+		size = PyList_GET_SIZE(p);
+		printf("[*] Size of the Python List = %zd\n", size);
+		printf("[*] Allocated = %lu\n", ((PyListObject *)p)->allocated);
+
+		while (b < size)
+		{
+			opject = PyList_GET_ITEM(p, b);
+			printf("Element %d: %s\n", b, opject->ob_type->tp_name);
+
+			if (PyBytes_Check(opject))
+			{
+				print_python_bytes(opject);
+			}
+			else if (PyFloat_Check(opject))
+			{
+				print_python_float(opject);
+			}
+			b++;
+		}
+	}
+	else
+	{
+		printf("  [ERROR] Invalid List Object\n");
+	}
 }
