@@ -1,6 +1,6 @@
-#0x08. Python - More Classes and Objects
+# 0x08. Python - More Classes and Objects
 
-#General
+# General
 
 - Why Python programming is awesome
 - What is OOP
@@ -24,9 +24,9 @@
 - What is a class method
 - What is a static method
 - How to dynamically create arbitrary new attributes for existing
-	instances of a class
+instances of a class
 - How to bind attributes to object and classes
 - What is and what does contain __dict__ of a class and of an
-	instance of a class
+instance of a class
 - How does Python find the attributes of an object or class
 - How to use the getattr function
