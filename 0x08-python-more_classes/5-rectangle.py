@@ -70,7 +70,7 @@ class Rectangle:
         that returns the rectangle area
         """
 
-        return self.height * self.width
+        return (self.height * self.width)
 
     def perimeter(self):
         """
@@ -79,8 +79,8 @@ class Rectangle:
         """
 
         if self.height == 0 or self.width == 0:
-            return (00
-        return 2 * (self.height + self.width)
+            return (00)
+        return (2 * (self.height + self.width))
 
     def __str__(self):
         """
@@ -99,7 +99,7 @@ class Rectangle:
         string representation of an instance
         """
 
-        return f"Rectangle({self.width}, {self.height})"
+        return (f"Rectangle({self.width}, {self.height})")
 
     def __del__(self):
         """
