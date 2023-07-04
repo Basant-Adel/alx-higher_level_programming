@@ -5,9 +5,7 @@ Write a function that divides all elements of a matrix
 
 
 def matrix_divided(matrix, div):
-    """
-    Matrix Divided
-    """
+    """ Matrix Divided """
 
     m = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list):
@@ -22,10 +20,9 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise TypeError("division by zero")
-    if not all(isinstance(x, (int, float)) for x in matrix[0]):
+    if not all(isinstance(i, (int, float)) for i in matrix[0]):
         raise TypeError(m)
-    if not all(len(x) == len(matrix[0]) for x in matrix):
+    if not all(len(i) == len(matrix[0]) for i in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
-    """ Returns a new matrix """
-    return [[round(x / div, 2) for x in row] for row in matrix]
+    return [[round(i / div, 2) for i in row] for row in matrix]
