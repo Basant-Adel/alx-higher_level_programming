@@ -1,12 +1,8 @@
 #!/usr/bin/python3
-"""
-Since the beginning you have been creating
-“Interactive tests”
-For this exercise, you will add Unittests
+"""Unittest for max_integer([..])
 """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
-
 
 class TestMaxInteger(unittest.TestCase):
     """ Test Max Integer """
