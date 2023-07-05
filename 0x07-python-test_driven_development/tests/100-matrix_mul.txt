@@ -47,14 +47,14 @@ Dividing an empty matrix by a matrix of number:
     >>> matrix_mul([], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    ValueError: m_a can’t be empty
+    ValueError: m_a can't be empty
 
 Dividing a matrix of number by an empty matrix:
 
     >>> matrix_mul([[1, 2], [3, 4]], [])
     Traceback (most recent call last):
         ...
-    ValueError: m_b can’t be empty
+    ValueError: m_b can't be empty
 
 Dividing a matrix of string by a matrix of number:
 
