@@ -12,7 +12,6 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.integer_validator("height", height)
         self.__height = height
-        """
-        Write a class Rectangle that inherits
-        from BaseGeometry (7-base_geometry.py)
-        """
+
+
+""" Write a class Rectangle that inherits from BaseGeometry """
