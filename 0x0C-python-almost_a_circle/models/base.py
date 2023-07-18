@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-
+""" This Class Will Be The BASE Of All Other Classes """
 import os
 import json
 import csv
 import turtle
-""" This Class Will Be The BASE Of All Other Classes """
 
 
 class Base:
@@ -25,7 +24,7 @@ class Base:
         """ JSON is one of the standard formats for sharing data """
 
         if list_dictionaries is None or list_dictionaries == []:
-            return '[]'
+            return "[]"
 
         return json.dumps(list_dictionaries)
 

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from models.base import Base
 """ Write The Class Rectangle """
+from models.base import Base
 
 
 class Rectangle(Base):
