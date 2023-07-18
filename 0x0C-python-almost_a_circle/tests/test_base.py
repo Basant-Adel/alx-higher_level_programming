@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" TEST BASE 
+""" TEST BASE
 Defines unittests for base.py.
 
 Unittest classes:
