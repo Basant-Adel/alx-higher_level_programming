@@ -169,7 +169,6 @@ class TestSquare_size(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square(float('nan'))
 
-
     def test_negative_size(self):
 
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
@@ -456,7 +455,6 @@ class TestSquare_stdout(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             s.__str__(1)
-
 
     def test_display_size(self):
 

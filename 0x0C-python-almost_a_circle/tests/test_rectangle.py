@@ -552,7 +552,6 @@ class TestRectangle_stdout(unittest.TestCase):
 
         return capture
 
-
     def test_str_method_print_width_height(self):
 
         r = Rectangle(4, 6)
@@ -592,7 +591,6 @@ class TestRectangle_stdout(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             r.__str__(1)
-
 
     def test_display_width_height(self):
 
