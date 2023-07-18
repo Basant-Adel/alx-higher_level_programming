@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+""" TEST BASE """
 import os
+import turtle
+import tkinter as TK
 import unittest
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
-""" TEST BASE """
 
 
 class TestBase_instantiation(unittest.TestCase):
