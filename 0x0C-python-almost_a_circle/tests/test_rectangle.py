@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+""" TEST RECTANGLE """
+
 import io
 import sys
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
-""" TEST RECTANGLE """
 
 
 class TestRectangle_instantiation(unittest.TestCase):
@@ -550,7 +551,7 @@ class TestRectangle_stdout(unittest.TestCase):
             rect.display()
         sys.stdout = sys.__stdout__
 
-        return capture
+        return (capture)
 
     def test_str_method_print_width_height(self):
 
