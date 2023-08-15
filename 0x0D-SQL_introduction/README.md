@@ -89,13 +89,12 @@ $
 
 ### Use “container-on-demand” to run MySQL
 
-<h5> In the container, credentials are `root/root` </h5>
-<br>
+<h4> In the container, credentials are root/root </h4>
+
 - Ask for container `Ubuntu 20.04`
 - Connect via SSH
 - OR connect via the Web terminal
 - In the container, you should start MySQL before playing with it:
-<br>
 
 ```bash
 $ service mysql start
@@ -109,5 +108,5 @@ performance_schema
 sys
 $
 ```
-<br>
-<h5> In the container, credentials are `root/root` </h5>
+
+<h4> In the container, credentials are root/root </h4>
