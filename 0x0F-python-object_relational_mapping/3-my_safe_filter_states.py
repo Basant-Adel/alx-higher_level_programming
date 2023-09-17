@@ -10,9 +10,18 @@ if __name__ == '__main__':
                          passwd=argv[2], db=argv[3])
 
     with db.cursor() as cur:
-        cur.execute({
+        cur.execute("""
+            SELECT
+                *
+            FROM
+                states
+            WHERE
+                name LIKE BINARY %(name)s
+            ORDER BY
+                states.id ASC
+        """, {
             'name': argv[4]
-            })
+        })
 
         rows = cur.fetchall()
 
