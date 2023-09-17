@@ -10,7 +10,10 @@ if __name__ == '__main__':
                          passwd=argv[2], db=argv[3])
 
     with db.cursor() as cur:
-        cur.execute({'name': argv[4]})
+        cur.execute({
+            'name': argv[4]
+            })
+
         rows = cur.fetchall()
 
     if rows is not None:
