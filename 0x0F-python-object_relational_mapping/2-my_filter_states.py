@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Write a script to take in argument and displays all values in states table """
+""" Write script to take in arg and displays all values in states table """
 
 import MySQLdb
 from sys import argv
